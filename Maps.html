@@ -7,8 +7,59 @@
     </head>
     <body>
         <style>
+            body { background-color:#F4F8FA;
+            }
+            header {background-color: white
+            }
+            #para1 {
+                text-align: center;
+                color: #1B31A8;
+            }
+            #orgin, #dest {
+                height:60px;
+                width:300px;
+                border: .5px solid #E9EEF2;
+                border-radius:2px;
+                background-image: url("location.jpg");
+                background-position: left;
+                background-size:30px 35px;
+                background-repeat: no-repeat;
+            }
+            #calc {
+                height:60px;
+                width:150px;
+                border: 1px solid #E9EEF2;
+                border-radius:30px;
+                color: #1B31A8;
+
+            }
 
         </style>
-        <header><img src="">Graviti</header>
+
+
+
+        <header><img src="graviti.jpg" id="logo"></header>
+
+        <p id="para1">Let's calculate <b>distance</b> from google maps</p>
+        <table>
+            <tr>
+                <td>
+                    <form action="/action_page.php" method="get">
+                        <label for="orgin">Orgin</label><br><br>
+                        <input type="text" id="orgin" name="orgin"><br><br>
+
+                        <input type="submit" value="Calculate" id="calc"><br><br>
+
+                        <label for="dest">Destnation</label><br><br>
+                        <input type="text" id="dest" name="dest"><br><br>
+
+                        <label for="displayValue">Distance</label><br><br>
+                        <input type="textbox" name="displayDist">
+                    </form>
+                </td>
+                <td><iframe src="http://"></iframe></td>
+            </tr>
+
+        </table>
     </body>
 </html>
