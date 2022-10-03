@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Maps
+        </title>
+    </head>
+    <body>
+        <style>
+            body {
+                background-color:#F4F8FA;
+            }
+            header {
+                background-color: white;
+                background-size:100px;
+                height: 100px;
+            }
+            #main {
+                padding-left: 150px;
+            }
+            #logo {
+                height: 80px;
+            }
+            #para1 {
+                text-align: center;
+                color: #1B31A8;
+                font-size:20px;
+            }
+            #orgin, #dest {
+                height:60px;
+                width:300px;
+                border: .5px solid #E9EEF2;
+                border-radius:2px;
+                background-image: url("location.jpg");
+                background-position: left;
+                background-size:30px 35px;
+                background-repeat: no-repeat;
+                text-indent: 30px;
+                font-size: 30px;
+                font-style: normal;
+                background-color: white;
+                color: #2d8ed9;
+
+            }
+            #calc {
+                height:80px;
+                width:150px;
+                border-width: 0px;
+                border-radius:50px;
+                background-color: #1B31A8;
+                color: white;
+
+            }
+            #displayDist {
+                height:60px;
+                width: 400px;
+                border-bottom: .5px solid #E9EEF2;
+                border-top: .5px solid #E9EEF2;
+                border-right: .5px solid #E9EEF2;
+                border-left: 0px;
+                border-color:  #E9EEF2;
+                border-radius:2px ;
+                background-size:30px 35px;
+                background-repeat: no-repeat;
+                text-align: center;
+                font-size: 30px;
+                font-style: normal;
+                background-color: white;
+                color: #4D6475;
+                display: inline-block;
+                padding: 3px;
+            }
+            ::placeholder { 
+                color: #4D6475;
+                opacity: 1;
+            }
+
+            .form-wrapper {
+                margin: 10px;
+              }
+              .full-input {
+                display: inline-block;
+                padding: 3px;
+                border: 0px solid blue;
+              }
+              input {
+                outline: none;
+                border: none;
+                display:block;
+                line-height: 1.2em;
+                font-size: 14pt;
+              }
+              #distLabel {
+                display: inline-block;
+                font-size: 20px;
+                color: black;
+                display:inline-block;
+                height:40px;
+                background-color:white;
+                color:black;
+                border-top: .5px solid #E9EEF2;
+                border-left: .5px solid #E9EEF2;
+                border-bottom: .5px solid #E9EEF2;
+                padding-bottom: 0px;
+                padding-top:30px;
+                padding-right:5px;
+              }
+              #distDesc {
+                color:black; 
+                line-height: 20px; 
+                display:inline-block;
+                background:#F4F8FA;
+                padding-top: 20px;
+                padding-left: 5px;
+                padding-right:94px;
+                padding-bottom:30px;
+                font-size: 18px;
+                border-left: .5px solid #E9EEF2;
+                border-bottom: .5px solid #E9EEF2;
+                border-right: .5px solid #E9EEF2;
+                border-radius:0px 0px 5px 5px;
+                      }
+                
+
+        </style>
+
+
+
+        <header><img src="graviti.jpg" id="logo"></header>
+
+        <p id="para1">Let's calculate <b>distance</b> from google maps</p>
+        <div id="main"><form action="/action_page.php" method="get"></form>
+            <table style="width:75%;height:75%;" align="center">
+                <tr>
+                    <td>
+                        <label for="orgin" style="font-family:Work Sans;">Orgin</label><br><br>
+                        <input type="text" id="orgin" name="orgin" placeholder="Mumbai"><br><br>
+                    </td>
+                    <td></td>
+                    <td rowspan="4" colspan="2" align="right"><div id="googleMap" style="width: 550px;height:550px;background-color:grey;padding-left:150px">sdrfghjktredrfghjkl</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+
+                    <td>
+                        <input type="submit" value="Calculate" id="calc"><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="dest">Destnation</label><br><br>
+                        <input type="text" id="dest" name="dest" placeholder="Delhi"><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">&nbsp;<div class="form-wrapper">
+                        <div class='full-input'>
+                            <label for="displayDist" id="distLabel">Distance</label>
+                            <input type="textbox" name="displayDist" id="displayDist" placeholder="1427kms" style="color:blue"><br>
+                            <div id="distDesc">the distance between <b>Mumbai</b> and <b>Delhi</b> is <b>1427kms</b></div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </form></div>
+
+        <script>
+            function myMap() {
+            var mapProp= {
+              center:new google.maps.LatLng(51.508742,-0.120850),
+              zoom:5,
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+            }
+            </script>
+            
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAolXVBph__8LXk-JukgnxDUI4LPDQAsxQ&callback=myMap"></script>
+        
+    </body>
+</html>
